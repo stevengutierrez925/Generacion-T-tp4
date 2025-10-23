@@ -1,0 +1,195 @@
+Esta es la estructura HTML-TP4.HTML
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP4 - Selectores y Pseudo-selectores CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="contenedor">
+        <div id="especial" class="destacado">Elemento especial</div>
+
+        <ul class="lista-items">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+
+        <section>
+            <p>Primer párrafo de la sección.</p>
+            <p>Segundo párrafo de la sección.</p>
+        </section>
+
+        <div>
+            <div>Hijo directo de div</div>
+            <div>Otro hijo directo de div</div>
+        </div>
+
+        <ol>
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+        </ol>
+
+        <a href="pagina.html">Enlace normal</a>
+        <a href="otra.html" target="_blank">Enlace con target blank</a>
+
+        <article>
+            <p>Párrafo dentro de article.</p>
+            <p>Otro párrafo dentro de article.</p>
+        </article>
+
+        <h2>Título sin span</h2>
+        <h2>Título con <span>span dentro</span></h2>
+
+        <img src="img1.jpg" alt="Imagen 1">
+        <img src="img2.jpg">
+
+        <ul class="lista-desordenada">
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+        </ul>
+
+        <table>
+            <tr><td>Fila 1</td></tr>
+            <tr><td>Fila 2</td></tr>
+            <tr><td>Fila 3</td></tr>
+            <tr><td>Fila 4</td></tr>
+        </table>
+
+        <div class="box sombra doble-clase">Div con dos clases</div>
+
+        <button>Botón</button>
+
+        <form>
+            <input type="text" placeholder="Texto">
+            <input type="password" placeholder="Contraseña">
+            <input type="text" disabled value="Deshabilitado">
+        </form>
+
+        <h3>Título h3</h3>
+        <p>Párrafo inmediatamente después de h3</p>
+
+        <p>Texto con una palabra <strong>importante</strong> en negrita.</p>
+
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Nosotros</li>
+                <li>Contacto</li>
+            </ul>
+        </nav>
+
+        <div class="nota importante-seccion">Texto con palabra importante en la clase</div>
+    </div>
+
+</body>
+</html>
+
+
+STYLE.CSS
+
+#especial { background-color: lightblue; }
+div#especial { background-color: lightgreen; }
+.destacado#especial { background-color: lightcoral; }
+#contenedor > #especial { background-color: lightgoldenrodyellow; }
+body div#especial { background-color: lightpink; }
+
+.lista-items li:nth-child(even) {
+    background-color: #ddd;
+}
+
+p:first-letter {
+    font-size: 20px;
+    color: darkred;
+}
+a:hover {
+    color: darkblue;
+}
+a::after {
+    content: " (enlace)";
+    color: gray;
+}
+
+.destacado {
+    color: darkorange;
+}
+
+section p:first-of-type {
+    font-weight: bold;
+}
+
+div > div {
+    border: 1px solid black;
+}
+
+ol li:last-child {
+    font-size: 20px;
+}
+
+a:not([target="_blank"]) {
+    text-decoration: underline;
+}
+
+article p {
+    line-height: 1.8;
+}
+
+h2:has(span) {
+    color: darkgreen;
+}
+
+img[alt] {
+    border: 2px solid #555;
+}
+
+.lista-desordenada li:nth-child(3) {
+    font-style: italic;
+}
+
+table tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+div[class*=" "] {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+button:hover {
+    background-color: #4a90e2;
+}
+
+form input[type="text"] {
+    border: 2px solid #2b5797;
+}
+
+h3 + p {
+    color: darkred;
+}
+
+a:visited {
+    opacity: 0.6;
+}
+
+p strong {
+    color: crimson;
+}
+
+input:disabled {
+    background-color: #ccc;
+}
+
+nav li {
+    margin: 5px 10px;
+}
+
+[class*="importante"] {
+    font-weight: bold;
+}
